@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Home
+<a asp-area="Restaurant" asp-controller="Restaurant" asp-action="Request" class="btn btn-primary">Request For Collection </a>
+</h1>
+<br />
+<center><h3>Pending</h3></center>
+<table class="table table-primary">
+    <tr>
+        <th>Order date</th>
+        <th>Last date and time</th>
+        <th>Status</th>
+    </tr>
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>@item.RequestDate</td>
+            <td>@item.ExpiredTime</td>
+            <td>Pending</td>
+        </tr>
+    }
+
+</table>
+

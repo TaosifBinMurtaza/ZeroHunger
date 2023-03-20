@@ -1,0 +1,21 @@
+﻿@model ZeroHunger.Model.Request
+@{
+    ViewData["Title"] = "Request";
+}
+
+<h1>Request For Collection</h1>
+<form method="post">
+    <label asp-for="RestaurantId">Resturant Id</label>
+    <input asp-for="RestaurantId" class="form-control" />
+    <span asp-validation-for="RestaurantId" class="text-danger"></span>
+    <br />
+
+    <label asp-for="RequestDate">Maximum Time For Preservation</label>
+    <input class="form-control" asp-for="ExpiredTime" />
+    <br />
+    <button type="submit" class="btn btn-primary form-control">Request</button>
+
+</form>
+
+
+
