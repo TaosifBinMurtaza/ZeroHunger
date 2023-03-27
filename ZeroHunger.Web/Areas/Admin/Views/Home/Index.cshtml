@@ -1,8 +1,28 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿
+@{
+    ViewData["Title"] = "Index";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h1>Admin</h1>
+    
+<br />
+<center><h3>Pending</h3></center>
+<table class="table table-primary">
+    <tr>
+        <th>Order date</th>
+        <th>Last date and time</th>
+        <th>Status</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.RequestDate</td>
+            <td>@item.ExpiredTime</td>
+            <td>Pending</td>
+            <td> <a asp-area="Admin" asp-controller="Home" asp-action="Details" asp-route-id="@item.Id">Assing a employee</a> </td>
+        </tr>
+    }
+
+</table>
+

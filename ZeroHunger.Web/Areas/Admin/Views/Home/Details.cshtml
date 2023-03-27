@@ -1,0 +1,19 @@
+﻿@model ZeroHunger.Model.Request
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>\
+<form method="post">
+
+    <input asp-for="Id" value="@Model.Id" hidden></input>
+    <label asp-for="EmployeeId"></label>
+    <select asp-for="EmployeeId" asp-items="ViewBag.Emp" class="form-select">
+        <option disabled selected>--Available Employee--</option>
+    </select>
+    <input asp-for="Status" value="Accepted" hidden></input>
+    <br />
+    <br />
+    <br />
+    <button type="submit" class="btn btn-primary form-control">Assign Employee</button>
+</form>
